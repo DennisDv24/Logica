@@ -1,0 +1,112 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+\usepackage{xcolor}
+
+
+\usepackage[margin=0.9in]{geometry}
+
+\spanishdecimal{.}
+
+\title{Apuntes Lógica}
+\author{Oskar Denis Siodmok}
+\begin{document}
+\maketitle
+\part{Lógica Bloque 2 - Tema 1}
+\section{Definiciones Generales}
+\begin{itemize}
+\item Objetivo: Estudio de la sintaxis de la lógica proposicional para poder analizar fórmulas.
+\item Alfabeto $A$: Conjunto de símbolos.
+\item Palabras sobre $A$: Secuecina finita de símbolos de $A$.
+\item $A^*$: Todas las posibles palabras de $A$.
+\item Lenguaje sobre A: Subconjunto de $A^*$.
+\item Reglas de formación: Las que permiten obtener nuevas expresiones en un lenguaje a partir de expresiones básicas.
+\end{itemize}
+
+\section{Elementos Básicos de la Lógica proposicional}
+\begin{itemize}
+	\item Proposiciones atómicas: Oraciones declarativas que pueden ser verdaderas o falsas y que no pueden descomponerse en proposiciones más simples. Se suelen denotar con $p,q,r,s,t,\dots$, símbolos que se denominan \textit{signatura}.
+	\item Conectivos lógicos:
+		\begin{itemize}
+			\item Constantes (de aridad 0): $\top$ o $\bot$ ($\top$ de True).
+			\item Conectivos unarios (de aridad 1): $\neg$ (negación).
+			\item Conectivos binarios (de aridad 2): denotados de forma general con $\circ$
+				\begin{itemize}
+					\item $\land$ (y).
+					\item $\lor$ (ó).
+					\item $\rightarrow$ (implicación).
+					\item $\leftrightarrow$ (doble implicación).
+				\end{itemize}
+		\end{itemize}
+	\item Símbolos de puntuación: Paréntesis abiertos y cerrados.
+\end{itemize}
+De esta forma, por ejemplo $()\neg p\land\lor )q\rightarrow)$ sería una palabra sobre el alfabeto de la lógica proposicional pero no seguiría las relgas de formación del lenguaje. Se denominaría fórmula no bien construida.
+\section{Definición Recursiva de las Fórmulas Proposicionales}
+Ls fórmulas proposicionales, fbc (fórmulas bien construidas) son palabras sobre el alfabeto de la lógica proposicional que se pueden construir recursivamente en un número finito de pasos mediante las siguiente reglas de formación:
+\begin{itemize}
+	\item Paso Base, (At): $\top$, $\bot$ y cualquier proposición atómica son fórmulas.
+	\item Pasos recursivos:
+		\begin{itemize}
+			\item $(\neg)$: Si $\varphi$ es fórmula $\rightarrow\neg\:\varphi$ es fórmula.
+			\item $(\circ)$: Si $\varphi$ y $\psi$ son fórmulas $\rightarrow(\varphi\circ\psi)$ es fórmula.
+		\end{itemize}
+\end{itemize}
+Así, si una palabra no se puede obtener mediante estas tres reglas no es una fórmula de la lógica proposicional. Notar que para representar fórmulas se usan letras del alfabeto griego $\varphi, \psi, \chi,\dots$. Al conjunto de todas las fórmulas bien construidas posibles de la lógica proposicional se le de nota como \textbf{F} o como \textbf{L} y hace referencia al lenguaje de la lógica proposicional.
+
+Además, se dice que $\psi$ es subfórmula de $\varphi$ si $\psi$ está formada a partir de $\varphi$ y conectivos de la lógica proposicional de forma correcta. Se cumple que cada fórmula es subfórmula de si misma.
+
+\section{Representación de fórmulas}
+
+\subsection{Forma Usual} 
+Seguira las reglas de formación establecidas anteriormente. Se usarán paréntesis para evitar la ambigüedad.
+
+\subsection{Forma Abreviada}
+Consistirá en quitar paréntesis innecesarios según una serie de criterios:
+	\begin{enumerate}
+		\item Se pueden omitir los paréntesis externos
+		\item Se introducen reglas de precedencia (prioridad):
+			\begin{itemize}
+				\item Nivel 1: $\neg$.
+				\item Nivel 2: $\lor$ y $\land$.
+				\item Nivel 3: $\rightarrow$ y $\leftrightarrow$.
+			\end{itemize}
+		\item Se admite la asociatividad por la derecha de $\lor$, $\land$, $\rightarrow$ y $\leftrightarrow$.
+	\end{enumerate}
+
+\subsection{Principio de Unicidad}
+Toda fórmula $\varphi$ perenece a solo una de las siguiente categorias:
+\begin{itemize}
+	\item (At): $\varphi$ es atómica.
+	\item ($\neg$): $\varphi$ es $\neg\varphi_1$ para cierta fórmula $\varphi_1$.
+	\item ($\circ$): $\varphi$ es $(\varphi_1\circ\varphi_2)$ para cierto conectivo $\circ$ y ciertas fórmulas $\varphi_1$ y $\varphi_2$.
+\end{itemize}
+Estas reglas implican que cada fórmula solo se puede analizar sintácticamente de una única fórmula.
+\subsection{Árboles Sintácticos}
+Una consecuencia directa de del principio de unicidad es la posibilidad de representar fórmulas mediante árboles.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
